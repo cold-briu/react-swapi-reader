@@ -5,12 +5,20 @@ import config from "../config"
 
 const PlanetsList = () => {
 	const [planets, setPlanets] = useState([])
+	const [error, setError] = useState("")
 
 	const getData = async () => {
-		const res = await getPlanets() // hacer la petición
 
-		//console.log(res.data.results); // usar la data
-		setPlanets(res.data.results)
+
+		try {
+
+			const res = await getPlanets() // hacer la petición
+			setPlanets(res.data.results)
+
+		} catch (error) {
+			setError(error.message)
+		}
+
 	}
 
 	useEffect(() => {
@@ -19,8 +27,7 @@ const PlanetsList = () => {
 
 	return (
 		<>
-			{console.log("planets", planets)}
-
+			{error.length > 0 ? <p>error: {error}</p> : null}
 			{
 				planets.map(
 					(e, i) => (
