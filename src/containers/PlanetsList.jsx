@@ -3,6 +3,7 @@ import { Card } from "../components"
 import { getPlanets } from "../api"
 import config from "../config"
 
+
 const PlanetsList = () => {
 	const [planets, setPlanets] = useState([])
 	const [error, setError] = useState("")
