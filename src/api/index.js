@@ -5,7 +5,7 @@ const api = Axios.create({
 })
 
 const getPlanets = async () => {
-	const data = await api.get("/planetasdasds")
+	const data = await api.get("/planets")
 	return data
 }
 
