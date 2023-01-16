@@ -1,5 +1,5 @@
 import React from 'react'
-import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route, Routes, Router } from 'react-router-dom'
+import { createBrowserRouter, createRoutesFromElements, RouterProvider, Route } from 'react-router-dom'
 
 import { Home, Planets, Notfound } from "./pages"
 import { Navbar } from "./layout"
@@ -18,7 +18,6 @@ const router = createBrowserRouter(
 				<Route path="*" element={<Notfound />} />
 
 			</Route>
-
 		</>
 	)
 );
